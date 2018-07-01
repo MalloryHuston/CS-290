@@ -2,7 +2,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>CS290 - HTML & CSS</title>
+    <title>CS290 - 2 - HTML & CSS</title>
     <meta name="A basic website demonstrating HTML and CSS usage" content="HTML & CSS">
     <meta name="Christopher Matian" content="CS290">
     <link rel="stylesheet" href="css/styles.css">
@@ -12,8 +12,9 @@
     <!-- Header -->
     <header>
         <!-- Table Portion of Assignment -->
-        <h4>Graphics Card Market Information</h4>
+        <h4></h4>
         <table class="computer-parts">
+            <caption>Graphics Card Market Information</caption>
             <!-- Table Header -->
             <thead>
                 <tr>
@@ -108,18 +109,102 @@
     <section class="section__2">
         <!-- Outer Content and Inner Content Portion -->
         <div class="outer-content">
-            <div class="inner-content">This is a box with a pink wrapper, and a blue filling.</div>
+            <div class="inner-content">This is a box with a pink wrapper and a blue filling.</div>
         </div>
     </section>
 
     <!-- Section Three -->
-    <section class="section__3"></section>
+    <section class="section__3">
+        <!-- Post Form -->
+        <h4>Form Submission [GET]</h4>
+        <form class="form-container" action="http://classes.engr.oregonstate.edu/eecs/winter2015/cs290-400/tools/class-content/form_tests/check_request.php" method="get" target="_blank">
+            <!-- Name -->
+            <div class="row-group">
+                <input type="text" id="text_input_1" name="text_input"/>
+                <label for="text_input_1">Name:</label>
+            </div>
+            <!-- Number -->
+            <div class="row-group">
+                <input type="number" id="numerical_input_1" name="numerical_input"/>
+                <label for="numerical_input_1">Number:</label>
+            </div>
+            <!-- Password -->
+            <div class="row-group">
+                <input type="password" id="password_input_1" name="password_input"/>
+                <label for="password_input_1">Password:</label>
+            </div>
+            <!-- Candy  -->
+            <div class="row-group radio-input">
+                <fieldset>
+                    <legend>Select Complementary Candy</legend>
+                    <!-- Snickers -->
+                    <div>
+                        <input type="radio" id="snickers_1" name="candy"/>
+                        <label for="snickers_1">Snickers</label>
+                    </div>
+                    <!-- Skittles -->
+                    <div>
+                        <input type="radio" id="skittles_1" name="candy"/>
+                        <label for="skittles_1">Skittles</label>
+                    </div>
+                    <!-- Mentos -->
+                    <div>
+                        <input type="radio" id="mentos_1" name="candy"/>
+                        <label for="mentos_1">Mentos</label>
+                    </div>
+                </fieldset>
+            </div>
+            <div class="row-group">
+            </div>
+            <button class="btn btn-blue btn-full" type="submit">Submit</button>
+        </form>
+    </section>
 
     <!-- Section Four -->
-    <section class="section__4"></section>
-
-    <!-- Section Five -->
-    <section class="section__5"></section>
+    <section class="section__4">
+        <!-- Get Form -->
+        <h4>Form Submission [POST]</h4>
+        <form class="form-container" action="http://classes.engr.oregonstate.edu/eecs/winter2015/cs290-400/tools/class-content/form_tests/check_request.php" method="post" target="_blank">
+            <!-- Name -->
+            <div class="row-group">
+                <input type="text" id="text_input_2" name="text_input"/>
+                <label for="text_input_2">Name:</label>
+            </div>
+            <!-- Number -->
+            <div class="row-group">
+                <input type="number" id="numerical_input_2" name="numerical_input"/>
+                <label for="numerical_input_2">Number:</label>
+            </div>
+            <!-- Password -->
+            <div class="row-group">
+                <input type="password" id="password_input_2" name="password_input"/>
+                <label for="password_input_2">Password:</label>
+            </div>
+            <!-- Candy  -->
+            <div class="row-group radio-input">
+                <fieldset>
+                    <legend>Select Complementary Candy</legend>
+                    <!-- Snickers -->
+                    <div>
+                        <input type="radio" id="snickers_2" name="candy"/>
+                        <label for="snickers_2">Snickers</label>
+                    </div>
+                    <!-- Skittles -->
+                    <div>
+                        <input type="radio" id="skittles_2" name="candy"/>
+                        <label for="skittles_2">Skittles</label>
+                    </div>
+                    <!-- Mentos -->
+                    <div>
+                        <input type="radio" id="mentos_2" name="candy"/>
+                        <label for="mentos_2">Mentos</label>
+                    </div>
+                </fieldset>
+            </div>
+            <div class="row-group">
+            </div>
+            <button class="btn btn-blue btn-full" type="submit">Submit</button>
+        </form>
+    </section>
 </body>
-
 </html>
