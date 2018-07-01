@@ -1,0 +1,102 @@
+/* === HTML/Document Styling === */
+html {
+    font-family: "Helvetica", sans-serif;
+}
+
+/* === Section Styling === */
+
+header,
+section:not(:last-of-type) {
+    border-bottom: 1px solid #eeeeee;
+}
+
+
+/* === Link styling === */
+a {
+    color: #3198ea;
+}
+
+a:link,
+a:focus,
+a:hover {
+    color: #3184d6;
+}
+
+/* === Header Font Styling === */
+h1, h2, h3, h4, h5, h6 {
+    color: #454545;
+    margin: 7.5px 0;
+}
+
+/* === Body Styling === */
+body {
+    padding: 0 25px;
+}
+
+/* === Table Styling === */
+table.computer-parts {
+    background-color: #fff;
+    border-collapse: collapse;
+    font-size: 12px;
+    margin-bottom: 15px;
+}
+
+table.computer-parts th {
+    text-transform: uppercase;
+}
+
+table.computer-parts td,
+table.computer-parts th {
+    border: 1px solid #e0e0e0;
+    padding: 10px;
+}
+
+table.computer-parts thead th:not(:first-child) {
+    color: #fff;
+    background-color: #3198ea;
+}
+
+table.computer-parts tbody td:first-child {
+    font-style: italic;
+}
+
+table.computer-parts tbody tr:nth-of-type(odd) {
+    background-color: #eeeeee;
+}
+
+/* === List Styling === */
+div.build-components > h5 {
+    font-size: 14px;
+}
+
+div.build-components > ul {
+    font-size: 12px;
+    list-style-type: square;
+}
+
+div.build-components > ul > li {
+    padding: 3px 0;
+}
+
+div.build-components > ul > li > span {
+    padding-right: 5px;
+    font-weight: bold;
+}
+
+/* === Outer Content Styling === */
+
+div.outer-content {
+    width: 75%;
+    margin: 25px 0;
+    padding: 25px;
+    background-color: #ff5b85;
+}
+
+/* === Inner Content Styling === */
+
+div.inner-content {
+    padding: 5px;
+    background-color: #3198ea;
+    color: #fff;
+    text-align: center;
+}

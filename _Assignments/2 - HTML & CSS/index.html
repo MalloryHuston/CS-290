@@ -1,18 +1,125 @@
 <html lang="en">
+
 <head>
-  <meta charset="utf-8">
-
-  <title>CS290 - HTML & CSS</title>
-  <meta name="A basic website demonstrating HTML and CSS usage" content="HTML & CSS">
-  <meta name="Christopher Matian" content="CS290">
-
-  <link rel="stylesheet" href="css/styles.css">
+    <meta charset="utf-8">
+    <title>CS290 - HTML & CSS</title>
+    <meta name="A basic website demonstrating HTML and CSS usage" content="HTML & CSS">
+    <meta name="Christopher Matian" content="CS290">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
-    
-    
+    <!-- Header -->
+    <header>
+        <!-- Table Portion of Assignment -->
+        <h4>Graphics Card Market Information</h4>
+        <table class="computer-parts">
+            <!-- Table Header -->
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>User Rating</th>
+                    <th>Value %</th>
+                    <th>Avg. Bench %</th>
+                    <th>Mkt. Share %</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <!-- Table Footer -->
+            <tfoot>
+                <tr>
+                    <td colspan="2">Source:</td>
+                    <td colspan="4"><a href="http://gpu.userbenchmark.com/" target="_blank">http://gpu.userbenchmark.com/</a></td>
+                </tr>
+            </tfoot>
+            <!-- Table Body -->
+            <tbody>
+                <tr>
+                    <td>GTX 1050</td>
+                    <td>95</td>
+                    <td>64.4</td>
+                    <td>38.6</td>
+                    <td>4.44</td>
+                    <td>$170</td>
+                </tr>
+                <tr>
+                    <td>GTX 1060</td>
+                    <td>160</td>
+                    <td>87.8</td>
+                    <td>71.6</td>
+                    <td>6.1</td>
+                    <td>$270</td>
+                </tr>
+                <tr>
+                    <td>GTX 1070</td>
+                    <td>176</td>
+                    <td>87.8</td>
+                    <td>97.6</td>
+                    <td>4.2</td>
+                    <td>$430</td>
+                </tr>
+                <tr>
+                    <td>GTX 1080</td>
+                    <td>132</td>
+                    <td>99.4</td>
+                    <td>125</td>
+                    <td>4.62</td>
+                    <td>$520</td>
+                </tr>
+                <tr>
+                    <td>GTX 1080 TI</td>
+                    <td>134</td>
+                    <td>92.2</td>
+                    <td>154</td>
+                    <td>3.5</td>
+                    <td>$790</td>
+                </tr>
+            </tbody>
+        </table>
+    </header>
 
+    <!-- Section One -->
+    <section class="section__1">
+        <!-- List Portion of Assignment -->
+        <h4>Computer Build Plan</h4>
+        <div class="build-components">
+            <h5>Internal Components</h5>
+            <ul>
+                <li><span>[CPU]</span>Core i7-8700K 3.7GHz 6-Core Processor</li>
+                <li><span>[Motherboard]</span>Asus - Prime Z370-A ATX LGA1151 Motherboard</li>
+                <li><span>[Memory]</span>G.Skill - Ripjaws V Series 32GB (2 x 16GB) DDR4-3200 Memory</li>
+                <li><span>[Storage]</span>Samsung - 860 Evo 1TB 2.5" Solid State Drive</li>
+                <li><span>[GFX]</span>EVGA - GeForce GTX 1080 Ti 11GB SC Black Edition Video Card</li>
+                <li><span>[PSU]</span>EVGA - SuperNOVA P2 850W 80+ Platinum Certified Fully-Modular ATX Power Supply</li>
+                <li><span>[Optical]</span>Asus - DRW-24B1ST/BLK/B/AS DVD/CD Writer</li>
+            </ul>
+        </div>
+        <div class="build-components">
+            <h5>Misc Components</h5>
+            <ul>
+                <li><span>[Case]</span>Corsair - 750D ATX Full Tower Case</li>
+                <li><span>[OS]</span>Microsoft - Windows 10 Pro OEM 64-bit</li>
+                <li><span>[Cooler]</span>Cooler Master - Hyper 212 EVO 82.9 CFM Sleeve Bearing CPU Cooler</li>
+            </ul>
+        </div>
+    </section>
 
+    <!-- Section Two -->
+    <section class="section__2">
+        <!-- Outer Content and Inner Content Portion -->
+        <div class="outer-content">
+            <div class="inner-content">This is a box with a pink wrapper, and a blue filling.</div>
+        </div>
+    </section>
+
+    <!-- Section Three -->
+    <section class="section__3"></section>
+
+    <!-- Section Four -->
+    <section class="section__4"></section>
+
+    <!-- Section Five -->
+    <section class="section__5"></section>
 </body>
+
 </html>
