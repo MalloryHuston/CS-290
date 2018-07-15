@@ -53,7 +53,7 @@ function makeComparator( auto1, auto2){
 }
 
 /*This compares two automobiles based on their type. The ordering from "greatest" to "least" is as follows: roadster, pickup, suv, wagon, (types not otherwise listed). It should be case insensitive. If two cars are of equal type then the newest one by model year should be considered "greater".*/
-function typeComparator( auto1, auto2){
+function typeComparator(auto1, auto2){
 
     let order = {
         roadster: 5,
@@ -62,11 +62,14 @@ function typeComparator( auto1, auto2){
         wagon: 2,
         sedan: 1
     };
-    // Vehicle Type
+
+    // Access the order object using object bracket notation
     let vehicle1 = order[auto1.type.toLowerCase()],
         vehicle2 = order[auto2.type.toLowerCase()];
 
-    return vehicle2 - vehicle1;
+
+    // The two vehicles are returned into the .sort method which handles the value comparison
+    return (vehicle2 - vehicle1);
 
 }
 
