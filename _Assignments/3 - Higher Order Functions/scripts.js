@@ -1,7 +1,7 @@
 // Author: Christopher Matian
 // OID: 933308644
 // Class: CS 290 - Web Dev
-// Date: July 1st, 2018
+// Date: July 14th, 2018
 
 // Sources Used
 // Sort Method: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
