@@ -103,7 +103,7 @@ console.log("*****");
 console.log("The cars sorted by year are:");
 let yearSort = sortArr(yearComparator, automobiles);
 yearSort.forEach(function(element) {
-    element.logMe(true);
+    element.logMe(false);
 });
 console.log(`\n`);
 
@@ -111,7 +111,7 @@ console.log(`\n`);
 console.log("The cars sorted by make are:");
 let makeSort = sortArr(makeComparator, automobiles);
 makeSort.forEach(function(element) {
-    element.logMe(true);
+    element.logMe(false);
 });
 console.log(`\n`);
 
