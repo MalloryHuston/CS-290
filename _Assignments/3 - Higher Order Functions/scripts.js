@@ -1,6 +1,10 @@
+// Author: Christopher Matian
+// OID: 933308644
+// Class: CS 290 - Web Dev
+// Date: July 1st, 2018
+
+// Sources Used
 // Sort Method: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort
-
-
 
 function Automobile( year, make, model, type ){
     this.year = year; //integer (ex. 2001, 1995)
