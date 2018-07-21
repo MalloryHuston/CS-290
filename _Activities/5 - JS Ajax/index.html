@@ -13,8 +13,33 @@
 <body>
 
 
+<section class="weather-app-container">
+
+    <form class="form-container" method="get">
+        <!-- Name -->
+        <div class="row-group">
+            <input type="text" id="weather-info-zip" name="weather-info-zip"/>
+            <label for="weather-info-zip">Weather Lookup by Zipcode</label>
+        </div>
+        <div class="row-group">
+            <input type="text" id="weather-info-city" name="weather-info-city"/>
+            <label for="weather-info-city">Weather Lookup by City</label>
+        </div>
+        <div class="row-group">
+            <button class="btn btn-blue" onclick="getWeather()">Submit</button>
+        </div>
+    </form>
+    <div class="weather-output">
+        <div class="city"></div>
+        <div class="temp"></div>
+        <div class="time"></div>
+    </div>
 
 
+</section>
 <script src="js/scripts.js"></script>
 </body>
 </html>
+
+
+<!-- API Key: http://api.openweathermap.org/data/2.5/forecast?id=524901&APPID=e66f888ed291ed592226b17cc91e9ddb -->
