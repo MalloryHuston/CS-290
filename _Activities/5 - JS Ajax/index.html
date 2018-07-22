@@ -16,30 +16,55 @@
 <section class="weather-app-container">
 
     <form class="form-container" method="get">
-        <!-- Name -->
-        <div class="row-group">
-            <input type="text" id="weather-info-zip" name="weather-info-zip"/>
-            <label for="weather-info-zip">Weather Lookup by Zipcode</label>
+
+        <!-- Look up by Zip -->
+        <div class="row-group weather-data-selector">
+            <div class="weather-data-control">
+                <div class="data-control selected">
+                    <a href="#tab-1">Zipcode</a>
+                </div>
+                <div class="data-control">
+                    <a href="#tab-2">City</a>
+                </div>
+            </div>
         </div>
         <div class="row-group">
-            <input type="text" id="weather-info-city" name="weather-info-city"/>
-            <label for="weather-info-city">Weather Lookup by City</label>
+            <div id="tab-1" class="input-panel-zip input-panel active">
+                <input type="text" id="weather-info-zip" name="weather-info-zip"/>
+                <label for="weather-info-zip">Weather Lookup by Zipcode</label>
+            </div>
+            <!-- Look up by City -->
+            <div id="tab-2" class="input-panel-city input-panel">
+                <input type="text" id="weather-info-city" name="weather-info-city"/>
+                <label for="weather-info-city">Weather Lookup by City</label>
+            </div>
         </div>
+        <div class="row-group input-radio">
+            <fieldset>
+                <!-- Imperial -->
+                <div>
+                    <input type="radio" id="unit_imperial" name="unit" value="imperial" checked/>
+                    <label for="unit_imperial">Imperial</label>
+                </div>
+                <!-- Metric -->
+                <div>
+                    <input type="radio" id="unit_metric" value="metric" name="unit"/>
+                    <label for="unit_metric">Metric</label>
+                </div>
+            </fieldset>
+        </div>
+        <!-- Submit -->
         <div class="row-group">
-            <button class="btn btn-blue" onclick="getWeather()">Submit</button>
+            <button id="weather-app-submit" class="btn btn-blue">Submit</button>
         </div>
     </form>
     <div class="weather-output">
         <div class="city"></div>
         <div class="temp"></div>
-        <div class="time"></div>
+        <div class="humidity"></div>
     </div>
-
 
 </section>
 <script src="js/scripts.js"></script>
 </body>
 </html>
-
-
-<!-- API Key: http://api.openweathermap.org/data/2.5/forecast?id=524901&APPID=e66f888ed291ed592226b17cc91e9ddb -->
