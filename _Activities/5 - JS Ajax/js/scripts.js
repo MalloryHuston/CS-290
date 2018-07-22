@@ -88,14 +88,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Check to make sure the input fields are not blank
         if ( document.querySelector('.input-panel-zip').classList.contains('active') ) {
-
             if (info.zip === "") {
-                
+
+                alert('Please input your zip code in the input field.');
+                return;
+
             }
-
+        } else if ( document.querySelector('.input-panel-city').classList.contains('active')) {
+            if(info.city === "") {
+                alert('Please input your city in the input field.');
+                return;
+            }
         }
-
-
 
         let req = new XMLHttpRequest();
         let weatherResponse = null;
@@ -103,11 +107,18 @@ document.addEventListener('DOMContentLoaded', function() {
         req.open("GET", "http://api.openweathermap.org/data/2.5/weather?" + info.dataType() + "&units=" + info.unit() + "&APPID=" + info.apikey, true);
         req.send();
 
+        // Hide the output container briefly and display the loading text
+        document.querySelector('.weather-output').classList.remove('show');
+        document.querySelector('.loading').classList.add('show');
+
         req.onreadystatechange = function() {
 
             if(this.readyState === 4) {
 
                 if(this.status === 200) {
+                    // Show the output container and hide the loading text
+                    document.querySelector('.weather-output').classList.add('show');
+                    document.querySelector('.loading').classList.remove('show');
 
                     weatherResponse = JSON.parse(req.responseText);
 
@@ -116,12 +127,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 } else {
 
+                    document.querySelector('.loading').classList.remove('show');
                     alert("There was an error handling the ajax request.");
 
                 }
-
             }
-
         };
     }
 
@@ -133,13 +143,13 @@ document.addEventListener('DOMContentLoaded', function() {
         let $container = document.querySelector('.weather-output');
 
         city = this.weather.name + ', ' + this.weather.sys.country;
-        metric = this.metric || "Metric not specified";
+        metric = (this.metric === 'imperial' ? 'fahrenheit' : 'celsius');
         temp = this.weather.main.temp;
         humidity = this.weather.main.humidity;
 
 
         $container.querySelector('.city').innerHTML = city;
-        $container.querySelector('.temp').innerHTML = temp;
+        $container.querySelector('.temp').innerHTML = temp + " (" + metric + ")";
         $container.querySelector('.humidity').innerHTML = humidity;
 
     }

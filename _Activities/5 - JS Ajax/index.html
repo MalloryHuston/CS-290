@@ -9,14 +9,14 @@
     <meta charset="UTF-8">
     <title>Activity 5 - Javascript Ajax</title>
     <link href="css/styles.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,600,700" rel="stylesheet">
 </head>
 <body>
 
 
 <section class="weather-app-container">
-
-    <form class="form-container" method="get">
-
+    <h2>Weather Check</h2>
+    <form class="form-container">
         <!-- Look up by Zip -->
         <div class="row-group weather-data-selector">
             <div class="weather-data-control">
@@ -28,19 +28,19 @@
                 </div>
             </div>
         </div>
-        <div class="row-group">
+        <div class="row-group weather-data-input-field">
             <div id="tab-1" class="input-panel-zip input-panel active">
-                <input type="text" id="weather-info-zip" name="weather-info-zip"/>
-                <label for="weather-info-zip">Weather Lookup by Zipcode</label>
+                <input type="text" id="weather-info-zip" name="weather-info-zip" required autocomplete="off"/>
+                <label for="weather-info-zip">Enter Zip</label>
             </div>
             <!-- Look up by City -->
             <div id="tab-2" class="input-panel-city input-panel">
-                <input type="text" id="weather-info-city" name="weather-info-city"/>
-                <label for="weather-info-city">Weather Lookup by City</label>
+                <input type="text" id="weather-info-city" name="weather-info-city" autocomplete="off" required/>
+                <label for="weather-info-city">Enter City</label>
             </div>
         </div>
         <div class="row-group input-radio">
-            <fieldset>
+            <div class="fieldset">
                 <!-- Imperial -->
                 <div>
                     <input type="radio" id="unit_imperial" name="unit" value="imperial" checked/>
@@ -51,19 +51,27 @@
                     <input type="radio" id="unit_metric" value="metric" name="unit"/>
                     <label for="unit_metric">Metric</label>
                 </div>
-            </fieldset>
+            </div>
         </div>
         <!-- Submit -->
         <div class="row-group">
-            <button id="weather-app-submit" class="btn btn-blue">Submit</button>
+            <button id="weather-app-submit" class="btn btn-pink">Submit</button>
         </div>
     </form>
-    <div class="weather-output">
-        <div class="city"></div>
-        <div class="temp"></div>
-        <div class="humidity"></div>
+    <div class="weather-output-container">
+        <div class="loading">Loading...</div>
+        <div class="weather-output">
+            <div>
+                <span>City:</span><span class="city"></span>
+            </div>
+            <div>
+                <span>Temperature:</span><span class="temp"></span>
+            </div>
+            <div>
+                <span>Humidity:</span><span class="humidity"></span>
+            </div>
+        </div>
     </div>
-
 </section>
 <script src="js/scripts.js"></script>
 </body>

@@ -1,7 +1,206 @@
-.input-panel.active {
+html {
+    font-family: "Montserrat", sans-serif;
+    width: 100%;
+}
+
+.weather-app-container > h2 {
+    max-width: 400px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.weather-app-container {
+    margin-top: 50px;
+}
+
+.form-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.row-group {
+    margin: 25px 0;
+}
+
+.weather-data-selector {
+    width: 100%;
+}
+
+.weather-data-control {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+}
+
+.weather-data-control > .data-control {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50px;
+    width: 200px;
+    margin: 10px 0;
+    background-color: #2e77cd;
+    cursor: pointer;
+}
+
+.weather-data-control > .data-control:hover {
+    background-color: #36a6ff;
+}
+
+.weather-data-control > .data-control:first-child {
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.weather-data-control > .data-control:last-child {
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.weather-data-control > .data-control.selected {
+    background-color: #36a6ff;
+}
+
+.weather-data-control a,
+.weather-data-control a:focus,
+.weather-data-control a:active {
+    color: #fff;
+    padding: 5px;
+    outline: 0;
+    text-decoration: none;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+.input-radio {
+    display: block;
+    justify-content: center;
+    max-width: 400px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.input-radio > div.fieldset {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    border: none;
+}
+
+.input-radio > div.fieldset > div {
+    margin: 0 15px;
+}
+
+.btn {
+    display: block;
+    width: 150px;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 15px;
+    border-radius: 5px;
+    color: #fff;
+    margin: 0 auto;
+    border: none;
+    cursor: pointer;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.btn-pink:hover {
+    background-color: #ff7a95;
+}
+
+.btn-pink {
+    background-color: #ff5b85;
+}
+
+.weather-data-input-field {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    width: 100%;
+}
+
+.weather-data-input-field > .input-panel {
+    display: none;
+    width: 100%;
+    max-width: 400px;
+    position: relative;
+    flex-flow: column nowrap;
+}
+
+.weather-data-input-field > .input-panel.active {
+    display: flex;
+}
+
+.weather-data-input-field > .input-panel > input {
+    font-size: 18px;
+    padding: 5px 5px 5px 0;
+    border: none;
+    border-bottom: 2px solid #3198ea;
+    -webkit-appearance: none;
+    outline: none;
+    order: 1;
+}
+
+.weather-data-input-field > .input-panel > label {
+    position: absolute;
+    top: 6px;
+    font-size: 18px;
+    order: 0;
+    transition: 0.2s ease-in-out;
+    cursor: text;
+    color: #b4b4b4;
+}
+
+.weather-data-input-field > .input-panel > input:focus + label,
+.weather-data-input-field > .input-panel > input:valid + label {
+    top: -12px;
+    font-size: 12px;
+}
+
+
+.weather-output > div {
+    margin: 10px 0;
+}
+
+.weather-output > div > span:first-child {
+    display: inline-block;
+    min-width: 125px;
+    text-align: right;
+    margin-right: 10px;
+    font-size: 12px;
+    color: #b4b4b4;
+}
+
+
+.weather-output-container {
+    display: flex;
+    flex-flow: column nowrap;
+    max-width: 400px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.loading {
+    background-color: aliceblue;
+    padding: 25px;
+    text-align: center;
+    display: none;
+}
+
+.loading.show {
     display: block;
 }
 
-.input-panel {
-    display: none;
+.weather-output.show {
+    opacity: 100;
+    transition: opacity 0.35s ease-in-out;
+}
+
+.weather-output {
+    opacity: 0;
+    will-change: opacity;
 }
