@@ -4,6 +4,7 @@
 document.addEventListener('DOMContentLoaded', function() {
 
     document.getElementById('weather-app-submit').addEventListener('click', getWeather);
+    document.getElementById('post-request-submit').addEventListener('click', submitRequest);
 
     // IIFE for handling click events on the panel
     (function() {
@@ -39,6 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
             activePanel.classList.add('active');
 
         };
+
         elSelector.forEach(function(node) {
 
             node.addEventListener('click', handleClick);
@@ -94,7 +96,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
 
             }
-        } else if ( document.querySelector('.input-panel-city').classList.contains('active')) {
+        }
+        else if ( document.querySelector('.input-panel-city').classList.contains('active')) {
             if(info.city === "") {
                 alert('Please input your city in the input field.');
                 return;
@@ -122,14 +125,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
                     weatherResponse = JSON.parse(req.responseText);
 
-                    // outputWeather
+                    // outputWeather callback
                     outputWeather(weatherResponse, info.unit());
-
-                } else {
-
+                }
+                else {
                     document.querySelector('.loading').classList.remove('show');
                     alert("There was an error handling the ajax request.");
-
                 }
             }
         };
@@ -154,4 +155,35 @@ document.addEventListener('DOMContentLoaded', function() {
 
     }
 
+    function submitRequest(event) {
+
+        event.preventDefault();
+
+        let req = new XMLHttpRequest();
+        let payload = document.getElementById('post-request-input').value;
+        let postResponse = null;
+
+        req.open("POST", 'http://httpbin.org/post', true);
+        req.setRequestHeader('Content-Type', 'application/json');
+
+        req.send(JSON.stringify(payload));
+
+        document.querySelector('.post-request-output').classList.remove('show');
+        document.querySelector('.post-loading').classList.add('show');
+
+        req.onreadystatechange = function() {
+            if(this.readyState === 4) {
+                if (this.status === 200) {
+                    document.querySelector('.post-request-output').classList.add('show');
+                    document.querySelector('.post-loading').classList.remove('show');
+
+                    postResponse = JSON.parse(req.responseText);
+                    document.querySelector('.post-request-data').innerHTML = postResponse.data;
+                }
+                else {
+                    alert('There was an issue with the post request handler.');
+                }
+            }
+        };
+    }
 });

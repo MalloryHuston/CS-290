@@ -62,13 +62,35 @@
         <div class="loading">Loading...</div>
         <div class="weather-output">
             <div>
-                <span>City:</span><span class="city"></span>
+                <span>city:</span><span class="city"></span>
             </div>
             <div>
-                <span>Temperature:</span><span class="temp"></span>
+                <span>temperature:</span><span class="temp"></span>
             </div>
             <div>
-                <span>Humidity:</span><span class="humidity"></span>
+                <span>humidity:</span><span class="humidity"></span>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="post-request-container">
+    <h2>Post Request Form</h2>
+    <form class="form-container">
+        <div class="row-group post-request-input-container">
+            <div class="post-request-input-field">
+                <input type="text" id="post-request-input" name="post-request-input" autocomplete="off" required/>
+                <label for="post-request-input">Enter Some Text</label>
+            </div>
+        </div>
+        <div class="row-group">
+            <button id="post-request-submit" class="btn btn-pink">Submit</button>
+        </div>
+    </form>
+    <div class="post-request-output-container">
+        <div class="post-loading">Loading...</div>
+        <div class="post-request-output">
+            <div>
+                <span>message:</span><span class="post-request-data"></span>
             </div>
         </div>
     </div>

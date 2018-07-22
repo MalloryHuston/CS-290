@@ -3,6 +3,7 @@ html {
     width: 100%;
 }
 
+.post-request-container > h2,
 .weather-app-container > h2 {
     max-width: 400px;
     width: 100%;
@@ -10,8 +11,10 @@ html {
     text-align: center;
 }
 
+.post-request-container,
 .weather-app-container {
     margin-top: 50px;
+    padding: 15px;
 }
 
 .form-container {
@@ -116,6 +119,7 @@ html {
     background-color: #ff5b85;
 }
 
+.post-request-input-container,
 .weather-data-input-field {
     display: flex;
     flex-flow: row nowrap;
@@ -131,10 +135,19 @@ html {
     flex-flow: column nowrap;
 }
 
+.post-request-input-container > .post-request-input-field {
+    display: flex;
+    width: 100%;
+    max-width: 400px;
+    position: relative;
+    flex-flow: column nowrap;
+}
+
 .weather-data-input-field > .input-panel.active {
     display: flex;
 }
 
+.post-request-input-container > .post-request-input-field > input,
 .weather-data-input-field > .input-panel > input {
     font-size: 18px;
     padding: 5px 5px 5px 0;
@@ -145,6 +158,7 @@ html {
     order: 1;
 }
 
+.post-request-input-container > .post-request-input-field > label,
 .weather-data-input-field > .input-panel > label {
     position: absolute;
     top: 6px;
@@ -155,12 +169,13 @@ html {
     color: #b4b4b4;
 }
 
+.post-request-input-container > .post-request-input-field > input:focus + label,
+.post-request-input-container > .post-request-input-field > input:valid + label,
 .weather-data-input-field > .input-panel > input:focus + label,
 .weather-data-input-field > .input-panel > input:valid + label {
     top: -12px;
     font-size: 12px;
 }
-
 
 .weather-output > div {
     margin: 10px 0;
@@ -175,6 +190,13 @@ html {
     color: #b4b4b4;
 }
 
+.post-request-output > div > span:first-child {
+    display: inline-block;
+    text-align: center;
+    margin-right: 10px;
+    font-size: 12px;
+    color: #b4b4b4;
+}
 
 .weather-output-container {
     display: flex;
@@ -184,6 +206,20 @@ html {
     margin: 0 auto;
 }
 
+.post-request-output-container {
+    display: flex;
+    flex-flow: column nowrap;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.post-loading {
+    max-width: 400px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.post-loading,
 .loading {
     background-color: aliceblue;
     padding: 25px;
@@ -191,16 +227,27 @@ html {
     display: none;
 }
 
+.post-loading.show,
 .loading.show {
     display: block;
 }
 
+.post-request-output.show,
 .weather-output.show {
     opacity: 100;
     transition: opacity 0.35s ease-in-out;
 }
 
+.post-request-output,
 .weather-output {
     opacity: 0;
     will-change: opacity;
+}
+
+.post-request-output {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
 }
