@@ -1,21 +1,45 @@
 let express = require('express');
-
 let app = express();
 let handlebars = require('express-handlebars').create({defaultLayout:'main'});
+let bodyparser = require('body-parser');
+
+app.use(bodyparser.urlencoded({extended: false}));
+app.use(bodyparser.json());
 
 app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars');
-app.set('port', 3000);
+app.set('port', 57864);
 
-app.get('/',function(req,res){
-    res.render('home') //We can omit the .handlebars extension as we do below
+app.get('/',function(req, res){
+
+    let urlArray = [];
+
+    for(let key in req.query) {
+        urlArray.push({'name': key, 'value': req.query[key]});
+    }
+
+    let context = {};
+    context.list = urlArray;
+    context.type = 'GET';
+
+    res.render('handler', context);
 });
 
-app.get('/other-page',function(req,res){
-    res.render('other-page');
+app.post('/', function(req, res) {
+    let urlArray = [];
+
+    for(let target in req.body) {
+        urlArray.push({'name': target, 'value': req.body[target]});
+    }
+
+    let context = {};
+    context.list = urlArray;
+    context.type = 'POST';
+
+    res.render('handler', context);
 });
 
-app.use(function(req,res){
+app.use(function(req, res){
     res.status(404);
     res.render('404');
 });
