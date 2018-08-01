@@ -26,12 +26,13 @@ function pauseVideo() {
     $control.on('click', function() {
 
         flip = !flip;
-
+        // Animation Toggle
         $animation.attr({
             "from": flip ? pause : play,
             "to": flip ? play : pause
-        }).get(0).beginElement();
+        })[0].beginElement();
 
+        // Video Control
         if($video.paused) {
             events.play();
         }
@@ -39,5 +40,4 @@ function pauseVideo() {
             events.pause();
         }
     })
-
 }

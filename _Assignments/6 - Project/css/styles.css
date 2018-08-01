@@ -1,6 +1,9 @@
 @charset "UTF-8";
 /* Raid Buddy CSS */
 
+@import "lato.css";
+@import "montserrat.css";
+
 * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -10,10 +13,19 @@
 }
 
 html, body {
+    font-family: Montserrat, Lato, sans-serif;
+    line-height: 1.4;
     font-size: 14px;
     -webkit-overflow-scrolling: touch;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+}
+
+.container-lg {
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
 }
 
 #hero-page-background {
@@ -70,6 +82,57 @@ html, body {
 
 .icon-play-container:hover {
     opacity: 1;
+}
+
+/* === Navigation Styling === */
+
+nav {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    right: 0;
+    height: 40px;
+    display: flex;
+    width: 100%;
+    line-height: inherit;
+    z-index: 15;
+}
+
+nav .nav-container {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+nav .nav-container > ul > li {
+    display: inline-block;
+}
+
+/* === Logo Styling === */
+svg:not(:root) {
+    overflow: hidden;
+}
+
+nav .logo {
+    position: relative;
+    display: flex;
+}
+
+nav .logo svg {
+    position: relative;
+    display: inline-block;
+    width: 160px;
+    padding: 5px;
+}
+
+nav .logo svg .logo-base-color {
+    fill: #f15a24;
+}
+
+nav .logo svg .logo-accent-color {
+    fill: #000;
 }
 
 
