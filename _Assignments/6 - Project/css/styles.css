@@ -106,8 +106,57 @@ nav .nav-container {
     width: 100%;
 }
 
+nav .nav-container > ul {
+    height: inherit;
+}
+
 nav .nav-container > ul > li {
+    position: relative;
     display: inline-block;
+    color: #fff;
+    text-align: left;
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: 800;
+    list-style-type: none;
+    text-decoration: none;
+}
+
+nav .nav-container > ul > li + li {
+    margin: 0 10px;
+}
+
+nav .nav-container > ul > li > a {
+    padding: 5px 10px;
+    font-size: 16px;
+    text-decoration: none;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.35);
+    transition:background ease-in-out .15s;
+}
+
+nav .nav-container > ul > li > a:before {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    background-color: #f15a24;
+    height: 1.5px;
+    width: 100%;
+    visibility: hidden;
+    transform: scaleX(0);
+    transition: ease-in-out 0.15s;
+}
+
+nav .nav-container > ul > li > a:hover:before {
+    visibility: visible;
+    transform: scaleX(1);
+}
+
+nav .nav-container > ul > li > a:hover {
+    color: #f15a24;
+    background-color: rgba(0, 0, 0, 0.75);
 }
 
 /* === Logo Styling === */
