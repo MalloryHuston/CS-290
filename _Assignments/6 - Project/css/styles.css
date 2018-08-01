@@ -1,0 +1,75 @@
+@charset "UTF-8";
+/* Raid Buddy CSS */
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html, body {
+    font-size: 14px;
+    -webkit-overflow-scrolling: touch;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+#hero-page-background {
+    position: relative;
+    padding: 0;
+    margin: 0;
+    z-index: 5;
+}
+
+#hero-page-background > div.video-banner > video {
+    display: block;
+    width: 100%;
+}
+
+#hero-page-background > div.video-control {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+}
+
+#hero-page-content {
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 10;
+}
+
+.content-box {
+    width: 100%;
+    height: 1500px;
+}
+
+/* === Button Styling === */
+
+.btn {
+    display: inline-block;
+    padding: 5px;
+}
+
+.btn-alpha {
+    background-color: #35a0ff;
+    color: #fff;
+}
+
+/* === Play / Pause Button === */
+
+.icon-play-container {
+    width: 36px;
+    height: 36px;
+    background-color: rgba(0, 0, 0, 0.35);
+    fill: #fff;
+    opacity: 0.5;
+    cursor: pointer;
+    transition: ease-in-out .15s;
+}
+
+.icon-play-container:hover {
+    opacity: 1;
+}
+
+

@@ -2,12 +2,34 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>CS290 - Web Project</title>
-    <link href="css/styles.css" rel="stylesheet"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit-cover"/>
+    <title>Raid Buddy</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet">
+    <link href="/css/styles.css" rel="stylesheet"/>
 </head>
 <body>
-    <h1>Work in Progress</h1>
-<script src="js/jquery-3.3.1.min.js"></script>
-<script src="js/scripts.js"></script>
+    <section id="hero-page-background">
+        <div class="video-banner">
+            <video id="video-main" muted loop autoplay>
+                <source src="/img/video/splash.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="video-control">
+            <div class="icon-play-container">
+                <svg viewBox="0 0 36 36" version="1.1" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M 11 10 L 17 10 L 17 26 L 11 26 M 20 10 L 26 10 L 26 26 L 20 26">
+                        <animate id="animation" begin="indefinite" attributeType="XML" attributeName="d" fill="freeze" from="M11,10 L17,10 17,26 11,26 M20,10 L26,10 26,26 20,26" to="M11,10 L18,13.74 18,22.28 11,26 M18,13.74 L26,18 26,18 18,22.28" dur="0.1s" keySplines=".4 0 1 1"
+                                 repeatCount="1"></animate>
+                    </path>
+                </svg>
+            </div>
+        </div>
+    </section>
+    <section id="hero-page-content">
+        <div class="content-box"></div>
+    </section>
+<script src="/js/jquery-3.3.1.min.js"></script>
+<script src="/js/scripts.js"></script>
 </body>
 </html>
