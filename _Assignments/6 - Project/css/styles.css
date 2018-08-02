@@ -35,25 +35,65 @@ html, body {
     z-index: 5;
 }
 
-#hero-page-background > div.video-banner > video {
+.video-banner > video {
     display: block;
     width: 100%;
+    object-fit: cover;
 }
 
-#hero-page-background > div.video-control {
-    position: fixed;
+.hero-content {
+    position: absolute;
+    top: 18%;
+    left: 0;
+    right: 0;
+}
+
+.hero-intro {
+    margin-bottom: 50px;
+}
+
+.hero-intro h1 {
+    font-size: 2.6em;
+    text-shadow: 0 0 1px transparent, 0 0 5px rgba(0,0,0,.8);
+    color: #fff;
+    margin-bottom: 25px;
+}
+
+.hero-intro p {
+    color: #ebdec2;
+    max-width: 65%;
+    font-size: 16px;
+    margin-bottom: 7px;
+}
+
+.hero-intro h4 {
+    font-size: 1.3em;
+}
+
+.hero-info {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+
+.hero-info .content-box {
+    width: calc((100% / 2) - 1.5em);
+    height: 125px;
+    padding: 1.25em;
+    background-color: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 0 0 1px #000;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.video-control {
+    position: absolute;
     bottom: 10px;
     right: 10px;
 }
 
-#hero-page-content {
+#hero-page-primary-content {
     background-color: rgba(0, 0, 0, 0.8);
     z-index: 10;
-}
-
-.content-box {
-    width: 100%;
-    height: 1500px;
 }
 
 /* === Button Styling === */
@@ -122,7 +162,7 @@ nav .nav-container > ul > li {
     text-decoration: none;
 }
 
-nav .nav-container > ul > li + li {
+nav .nav-container > ul > li {
     margin: 0 10px;
 }
 
@@ -183,5 +223,15 @@ nav .logo svg .logo-base-color {
 nav .logo svg .logo-accent-color {
     fill: #000;
 }
+
+/* === Sticky Column === */
+.sticky-column {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 56px;
+}
+
 
 

@@ -1,5 +1,6 @@
 $(document).ready(function() {
     pauseVideo();
+    stickyColumn();
 });
 
 
@@ -40,4 +41,15 @@ function pauseVideo() {
             events.pause();
         }
     })
+}
+
+function stickyColumn() {
+
+    let videoHeight = $('#video-banner').outerHeight();
+    let column = $('.sticky-column');
+
+    $(window).on('resize', function() {
+        column.height = videoHeight;
+    });
+
 }
