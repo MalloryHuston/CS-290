@@ -1,6 +1,7 @@
 $(document).ready(function() {
     pauseVideo();
     stickyColumn();
+    carousel();
 });
 
 
@@ -51,5 +52,67 @@ function stickyColumn() {
     $(window).on('resize', function() {
         column.height = videoHeight;
     });
+}
 
+function carousel() {
+
+    // Handlers
+    let next = $('.next');
+    let prev = $('.prev');
+    let dot1 = $('.dot-1');
+    let dot2 = $('.dot-2');
+
+    // On Click Events
+    next.on('click', function() {
+        plusSlides(1);
+    });
+
+    prev.on('click', function() {
+        plusSlides(-1);
+    });
+
+    dot1.on('click', function() {
+        currentSlide(1);
+    });
+
+    dot2.on('click', function() {
+        currentSlide(2);
+    });
+
+    // Carousel Logic
+    let slideIndex = 1;
+    showSlides(1);
+
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        let i,
+            slides = document.getElementsByClassName('carousel-slides');
+            dots = document.getElementsByClassName('dot');
+
+        if ( n > slides.length ) {
+            slideIndex = 1;
+        }
+
+        if ( n < 1 ) {
+            slideIndex = slides.length;
+        }
+
+        for ( i = 0; i < slides.length; i++ ) {
+            slides[i].style.display = "none";
+        }
+
+        for ( i = 0; i < dots.length; i++ ) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+    }
 }

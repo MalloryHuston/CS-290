@@ -21,6 +21,11 @@ html, body {
     -moz-osx-font-smoothing: grayscale;
 }
 
+body#primary-background {
+    background-image: url("/img/general/background-repeat.jpg");
+    background-repeat: repeat;
+}
+
 .container-lg {
     max-width: 1040px;
     margin: 0 auto;
@@ -39,6 +44,7 @@ html, body {
     display: block;
     width: 100%;
     object-fit: cover;
+    filter: brightness(0.5);
 }
 
 .hero-content {
@@ -76,19 +82,62 @@ html, body {
     justify-content: space-between;
 }
 
-.hero-info .content-box {
+.hero-info .card-container {
+    display: flex;
+    flex-flow: row nowrap;
+    flex: 0 0 auto;
+    color: #fff;
+    text-decoration: none;
     width: calc((100% / 2) - 1.5em);
-    height: 125px;
     padding: 1.25em;
     background-color: rgba(255, 255, 255, 0.15);
     box-shadow: 0 0 0 1px #000;
     border: 1px solid rgba(255, 255, 255, 0.15);
+    transition: background ease-in-out .15s;
 }
+
+.hero-info .card-container:hover {
+    background-color: rgba(255, 255, 255, 0.30);
+}
+
+.card-icon {
+    display: block;
+    position: relative;
+    flex: none;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 50px;
+    width: 50px;
+}
+
+.icon-question {
+    background-image: url("/img/icons/icon_question.png");
+}
+
+.icon-book {
+    background-image: url("/img/icons/icon_book.png");
+}
+
+.card-text {
+    display: flex;
+    flex-flow: column nowrap;
+    margin-left: 25px;
+}
+
+.card-text > h1 {
+    font-size: 1.25em;
+}
+
+.card-text > p {
+    margin-top: 5px;
+}
+
 
 .video-control {
     position: absolute;
     bottom: 10px;
     right: 10px;
+    z-index: 1000;
 }
 
 #hero-page-primary-content {
@@ -171,8 +220,10 @@ nav .nav-container > ul > li > a {
     font-size: 16px;
     text-decoration: none;
     color: #fff;
-    background-color: rgba(0, 0, 0, 0.35);
-    transition:background ease-in-out .15s;
+    box-shadow: 0 0 0 1px #000;
+    background-color: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    transition: background ease-in-out .15s;
 }
 
 nav .nav-container > ul > li > a:before {
@@ -195,8 +246,7 @@ nav .nav-container > ul > li > a:hover:before {
 }
 
 nav .nav-container > ul > li > a:hover {
-    color: #f15a24;
-    background-color: rgba(0, 0, 0, 0.75);
+    background-color: rgba(255, 255, 255, 0.30);
 }
 
 /* === Logo Styling === */
@@ -233,5 +283,146 @@ nav .logo svg .logo-accent-color {
     width: 56px;
 }
 
+/* === Carousel Styling === */
 
+.carousel-container {
+    position: relative;
+    max-width: 100%;
+    margin: auto;
+}
+
+.carousel-slides {
+    display: none;
+}
+
+.dot-container {
+    text-align: center;
+    background-color: #000;
+    padding: 5px;
+}
+
+.dot {
+    cursor: pointer;
+    height: 7.5px;
+    width: 7.5px;
+    margin: 0 2px;
+    background-color: #717171;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color .15s ease-in-out;
+}
+
+.active, .dot:hover {
+    background-color: #bbb;
+}
+
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+    from {opacity: .2}
+    to {opacity: 1}
+}
+
+@keyframes fade {
+    from {opacity: .2}
+    to {opacity: 1}
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 18px;
+    box-shadow: 0 0 0 1px #000;
+    background-color: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    transition: background ease-in-out .15s;
+}
+
+.next {
+    right: 0;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(255, 255, 255, 0.30);
+}
+
+.background {
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 400px;
+}
+
+.background-1 {
+    background-image: url("/img/general/carousel-one.jpg");
+}
+
+.background-2 {
+    background-image: url("/img/general/carousel-two.jpg");
+    background-position: 100% 30%;
+}
+
+.carousel-slide-content {
+    display: block;
+    color: #fff;
+    text-align: right;
+    text-shadow: 0 0 1px transparent, 0 0 5px rgba(0,0,0,.8);
+}
+
+.carousel-slide-content > h1 {
+    padding-top: 100px;
+    margin-bottom: 25px;
+    font-size: 2em;
+}
+
+.carousel-slide-content > p {
+    margin: 0 0 0 auto;
+    max-width: 50%;
+}
+
+.carousel-btn {
+    display: inline-block;
+    position: relative;
+    color: #fff;
+    padding: 15px;
+    margin-top: 25px;
+    box-shadow: 0 0 0 1px #000;
+    background-color: rgba(241, 60, 55, 0.5);
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    transition: background ease-in-out .15s;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.carousel-btn > span {
+    position: relative;
+    top: 1px;
+}
+
+.carousel-btn:hover {
+    background-color: rgba(241, 60, 55, 0.85);
+}
+
+.carousel-btn > i {
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+/* === Divider Styling === */
+
+.divider {
+    height: 10px;
+    width: 100%;
+    background-color: #000000;
+}
 
