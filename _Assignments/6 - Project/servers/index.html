@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit-cover"/>
+    <title>Server Status</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="/css/styles.css" rel="stylesheet"/>
+</head>
+<body id="primary-background">
+    <nav class="container-lg">
+    <a href="/" class="logo">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 153.8 32.4">
+            <path class="logo-base-color" d="M1.6 28V1h12l6 5V1h12l5 8 1-8h21l5 8 1-8h12l5 4 1-4h30l5 8 1-8h11l6 8V1h17v15l-4 3v7h-8v-9l-5-4v7l-7 7h-11v-6l-7 6h-23l-6-6-6 6h-12v-6l-7 7h-38l-1 3h-7v-3z"></path>
+            <path class="logo-accent-color" d="M8.9 7.1v3.7h2.5V7.1H8.9zm0 0v3.7h2.5V7.1H8.9zm0 0v3.7h2.5V7.1H8.9zM26.8 6v4.8h2.5L26.8 6zm0 0v4.8h2.5L26.8 6zm0 0v4.8h2.5L26.8 6zm0 0v4.8h2.5L26.8 6zm0 0v4.8h2.5L26.8 6z"></path>
+            <path class="logo-accent-color" d="M135.3 0l-.9 3.2v3.2L130.3 0h-12.9l-.9 3.2v3.2L112.3 0H81.5l-.9 3.2v.4L76.2 0H63.6l-.9 3.2v3.2L58.5 0H36.8l-.9 3.2v3.2L31.7 0H18.8l-.9 3.2v.4L13.5 0H.9L0 3.2v26.2h9v3h9.4l.8-3h38.1l5.3-5.2v5.2h12.7l5.5-5.5 5.6 5.5h24.8l5.2-5.2v5.2h12.7l5.8-5.8.9-3.2v-5.2l3.5 3.4v10.7h9.4l.9-3.2v-6.6h3.2l.9-3.2V0h-18.4zM17.9 13.2h-3.6l3.6 3.6v10.9h-6.6v-10l-2.5-2.5v9.5H2.4V1.4H13l5 4v7.8zm18 11.5h-6.6v-9.9h-2.5v9.9h-6.5V1.4h10.6l5 7.6v15.7zm8.9 0h-6.5V9h6.5v15.7zm0-18.2h-6.5v-5h6.5v5zm17.9 13.3l-5 4.9H47.1V1.4h10.6l5 7.6v10.8zM80.6 9.3L77 12.9h3.6v6.9l-4.9 4.9H65V1.4h10.6l5 4v3.9zm18 15.4H87.9l-5-4.9V1.4h6.5V19H92V1.4h6.6v23.3zm17.9-4.9l-5 4.9h-10.6V1.4h10.7l4.9 7.6V19.8zm17.9 0l-5 4.9h-10.6V1.4h10.6l4.9 7.6v10.8zm18-4.9h-4.1v9.9h-6.5v-9.9l-5-4.9V1.4h6.5v9.4h2.5V1.4h6.6v13.5zM35.9 9v15.7V9z"></path>
+            <path class="logo-accent-color" d="M53.7 7.1v12h2.5v-12h-2.5zm0 0v12h2.5v-12h-2.5zm0 0v12h2.5v-12h-2.5zm0 0v12h2.5v-12h-2.5zm0 0v12h2.5v-12h-2.5zM71.6 14.9v4.2H74v-4.2h-2.4zm0-7.8v3.7H74V7.1h-2.4zm0 7.8v4.2H74v-4.2h-2.4zm0-7.8v3.7H74V7.1h-2.4zM62.7 9v10.8V9zm8.9-1.9v3.7H74V7.1h-2.4zm0 7.8v4.2H74v-4.2h-2.4zm0-7.8v3.7H74V7.1h-2.4zm0 7.8v4.2H74v-4.2h-2.4zm0 0v4.2H74v-4.2h-2.4zm0-7.8v3.7H74V7.1h-2.4zM80.6 12.9v7-7zm0-7.5v3.9-3.9zM107.5 7.1v12h2.5v-12h-2.5zm0 0v12h2.5v-12h-2.5zm-9-3.9v21.5V3.1v.1zm9 3.9v12h2.5v-12h-2.5zm0 0v12h2.5v-12h-2.5zm0 0v12h2.5v-12h-2.5zM125.4 7.1v12h2.5v-12h-2.5zm0 0v12h2.5v-12h-2.5zM116.5 9v10.8V9zm8.9-1.9v12h2.5v-12h-2.5zm0 0v12h2.5v-12h-2.5zm0 0v12h2.5v-12h-2.5zm0 0v12h2.5v-12h-2.5zm0 0v12h2.5v-12h-2.5zM134.4 9v4.7V9z"></path>
+        </svg>
+    </a>
+    <div class="nav-container">
+        <ul>
+            <li>
+                <a href="#!">News</a>
+            </li>
+            <li>
+                <a href="#!">PvE</a>
+            </li>
+            <li>
+                <a href="#!">PvP</a>
+            </li>
+            <li>
+                <a href="#!">Servers</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+    <section class="server-page container-lg">
+        <section class="server-intro">
+            <h1>Server Status</h1>
+            <p>The section below is the current status of all existing World of Warcraft servers. The call is made when the page is loaded. You can refresh the content by reloading the page in the event a server outage occurs.</p>
+        </section>
+        <section class="server-table-container">
+            <div class="server-loading show">
+                <p>Loading Servers</p>
+                <div class="lds-ellipsis">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+                <div class="server-list">
+                    <div class="server-row heading">
+                        <div class="data server-type">Type</div>
+                        <div class="data server-name">Name</div>
+                        <div class="data server-bg">Battlegroup</div>
+                        <div class="data server-pop">Population</div>
+                        <div class="data server-status">Status</div>
+                    </div>
+                </div>
+        </section>
+    </section>
+    <!-- Scripts -->
+    <script src="/js/jquery-3.3.1.min.js"></script>
+    <script src="/js/servers.js"></script>
+</body>
+</html>

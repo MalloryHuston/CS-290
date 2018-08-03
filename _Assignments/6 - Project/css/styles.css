@@ -390,6 +390,7 @@ nav .logo svg .logo-accent-color {
     max-width: 50%;
 }
 
+.download-btn,
 .carousel-btn {
     display: inline-block;
     position: relative;
@@ -404,15 +405,18 @@ nav .logo svg .logo-accent-color {
     font-weight: 700;
 }
 
+.download-btn > span,
 .carousel-btn > span {
     position: relative;
     top: 1px;
 }
 
+.download-btn:hover,
 .carousel-btn:hover {
     background-color: rgba(241, 60, 55, 0.85);
 }
 
+.download-btn > i,
 .carousel-btn > i {
     vertical-align: middle;
     margin-right: 5px;
@@ -431,7 +435,213 @@ footer {
     display: block;
     text-align: center;
     font-size: 0.85em;
-    padding: 25px;
+    padding: 100px;
     color: #fff;
+}
+
+footer .copyright-notice {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+/* === Server Status Page Styling === */
+.server-intro {
+    margin-top: 100px;
+    color: #fff;
+    margin-bottom: 25px;
+}
+
+.server-intro h1 {
+    font-size: 2.6em;
+    margin-bottom: 15px;
+}
+
+.server-intro p {
+    color: #ebdec2;
+}
+
+.server-table-container {
+    display: flex;
+    flex-flow: column nowrap;
+    position: relative;
+    margin-bottom: 50px;
+}
+
+.server-row {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    color: #fff;
+    font-weight: 600;
+    padding: 5px;
+}
+
+.server-row.heading {
+    border-bottom: .5px solid #fff;
+    margin-bottom: 5px;
+}
+
+.server-row.heading > .data {
+    font-weight: 700;
+    cursor: pointer;
+    text-transform: none;
+}
+
+.server-row.heading > .data:last-child {
+    text-align: right;
+}
+
+.server-row > .data:last-child {
+    text-align: right;
+}
+
+.server-row:not(:first-child):nth-of-type(even) {
+    background-color: rgba(123, 92, 67, 0.15);
+}
+
+.server-row > .data {
+    width: calc((100% / 5) - 10px);
+}
+
+.server-row .server-type {
+    text-transform: uppercase;
+}
+
+.server-row .server-status.true {
+    color: #22d65b;
+}
+
+.server-row .server-status.false {
+    color: #ff4143;
+}
+
+.server-row .server-pop.unknown {
+    color: #ffd25d;
+}
+
+.server-row .server-pop.full {
+    color: #ff110e;
+}
+
+.server-row .server-pop.high {
+    color: #ff4143;
+}
+
+.server-row .server-pop.medium {
+    color: #f17a3c;
+}
+
+.server-row .server-pop.low {
+    color: #35a0ff;
+}
+
+.server-row .server-type.pve {
+    color: #f15a24;
+}
+
+.server-row .server-type.rp {
+    color: #d159ff;
+}
+
+/* CSS loading animation from:
+https://loading.io/css/
+ */
+
+.server-list {
+    opacity: 0;
+    transition: opacity 0.75s ease-in-out 0.5s;
+}
+
+.server-list.show {
+    opacity: 1;
+}
+
+/* === Loading Animation === */
+.server-loading {
+    position: absolute;
+    top: 25px;
+    left: 0;
+    right: 0;
+    color: #fff;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 5px;
+    opacity: 0;
+    transition: opacity 0.75s ease-in-out;
+    pointer-events: none;
+}
+
+.server-loading.show {
+    opacity: 1;
+}
+
+.server-loading > p {
+    position: relative;
+    top: 10px;
+}
+
+.lds-ellipsis {
+    display: inline-block;
+    position: relative;
+    width: 64px;
+    height: 64px;
+}
+
+.lds-ellipsis div {
+    position: absolute;
+    top: 27px;
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: #3f44f1;
+    animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+
+.lds-ellipsis div:nth-child(1) {
+    left: 6px;
+    animation: lds-ellipsis1 0.6s infinite;
+}
+
+.lds-ellipsis div:nth-child(2) {
+    left: 6px;
+    animation: lds-ellipsis2 0.6s infinite;
+}
+
+.lds-ellipsis div:nth-child(3) {
+    left: 26px;
+    animation: lds-ellipsis2 0.6s infinite;
+}
+
+.lds-ellipsis div:nth-child(4) {
+    left: 45px;
+    animation: lds-ellipsis3 0.6s infinite;
+}
+
+@keyframes lds-ellipsis1 {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes lds-ellipsis3 {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(0);
+    }
+}
+
+@keyframes lds-ellipsis2 {
+    0% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(19px, 0);
+    }
 }
 
