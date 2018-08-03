@@ -426,3 +426,12 @@ nav .logo svg .logo-accent-color {
     background-color: #000000;
 }
 
+/* === Footer === */
+footer {
+    display: block;
+    text-align: center;
+    font-size: 0.85em;
+    padding: 25px;
+    color: #fff;
+}
+
