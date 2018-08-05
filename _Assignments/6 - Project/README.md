@@ -5,6 +5,7 @@ This is my project for CS-290. It started out as something grander but I ran int
 Additionally, the PvE API I couldn't finish in time because of time constraints and obligations to CS 271. 
 
 # Sources
+
 - World of Warcraft Official website for images and text filler content.
 - W3Schools Carousel Guide for implementing the carousel image slider.
 
