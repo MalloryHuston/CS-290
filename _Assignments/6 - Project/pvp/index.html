@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit-cover"/>
-    <title>Server Status</title>
+    <title>PvP Status</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="../css/styles.css" rel="stylesheet"/>
 </head>
@@ -23,23 +23,40 @@
                 <a href="../pve">PvE</a>
             </li>
             <li>
-                <a href="../pvp">PvP</a>
+                <a href="#!">PvP</a>
             </li>
             <li>
-                <a href="#!">Servers</a>
+                <a href="../servers">Servers</a>
             </li>
         </ul>
     </div>
 </nav>
-    <section class="server-page container-lg">
-        <section class="server-intro">
-            <h1>Server Status</h1>
-            <p>The section below is the current status of all existing World of Warcraft servers. The call is made when the page is loaded. You can refresh the content by reloading the page in the event a server outage occurs.</p>
-            <p>Note: as of recent changes to mega-server structuring, all Normal and PvP servers were consolidated as PvE servers. The only available types of servers are PvE or RP (Role-playing).</p>
+    <section class="pvp-page container-lg">
+        <section class="pvp-intro">
+            <h1>Player vs. Player Leaderboards</h1>
+            <p>In Battle for Azeroth, we want to increase clarity and offer a more structured progression that recognizes players’ accomplishments in real time as they climb through the ranks. As players reach the following rating thresholds, they will enter formal brackets:</p>
+            <ul>
+                <li>Combatant: 1400–1599</li>
+                <li>Challenger: 1600–1799</li>
+                <li>Rival: 1800–2099</li>
+                <li>Duelist: 2100–2399</li>
+                <li>Gladiator: 2400+</li>
+            </ul>
+            <p>The specific rewards available in each of these brackets which will be clearly shown in the game’s interface so players can work their way toward earning the items they want most.</p>
+            <p>The following list will display the current season's PvP leaderboards across the world.</p>
         </section>
-        <section class="server-table-container">
-            <div class="server-loading show">
-                <p>Loading Servers</p>
+        <section class="pvp-table-container">
+            <div class="pvp-bracket-selection-container">
+                <label for="pvp-bracket-selection">Bracket Type:</label>
+                <select id="pvp-bracket-selection">
+                    <option value="0">2v2</option>
+                    <option value="1">3v3</option>
+                    <option value="2">5v5</option>
+                    <option value="3">RBG</option>
+                </select>
+            </div>
+            <div class="pvp-loading">
+                <p>Loading Bracket</p>
                 <div class="lds-ellipsis">
                     <div></div>
                     <div></div>
@@ -47,19 +64,14 @@
                     <div></div>
                 </div>
             </div>
-                <div class="server-list">
-                    <div class="server-row heading">
-                        <div class="data server-type">Type</div>
-                        <div class="data server-name">Name</div>
-                        <div class="data server-bg">Battlegroup</div>
-                        <div class="data server-pop">Population</div>
-                        <div class="data server-status">Status</div>
-                    </div>
+            <div class="pvp-list">
+                <div class="pvp-unavailable">
+                    <p>The PvP Leaderboards are currently unavailable. Usually, this is because the game is between seasons or expansions, and the new season for PvP rankings isn't available yet. Check back in a few weeks.</p>
                 </div>
+            </div>
         </section>
     </section>
-    <!-- Scripts -->
-    <script src="../js/jquery-3.3.1.min.js"></script>
-    <script src="../js/servers.js"></script>
+<script src="../js/jquery-3.3.1.min.js"></script>
+<script src="../js/ajax_pvp.js"></script>
 </body>
 </html>

@@ -22,7 +22,7 @@ html, body {
 }
 
 body#primary-background {
-    background-image: url("/img/general/background-repeat.jpg");
+    background-image: url("../img/general/background-repeat.jpg");
     background-repeat: repeat;
 }
 
@@ -111,11 +111,11 @@ body#primary-background {
 }
 
 .icon-question {
-    background-image: url("/img/icons/icon_question.png");
+    background-image: url("../img/icons/icon_question.png");
 }
 
 .icon-book {
-    background-image: url("/img/icons/icon_book.png");
+    background-image: url("../img/icons/icon_book.png");
 }
 
 .card-text {
@@ -364,11 +364,11 @@ nav .logo svg .logo-accent-color {
 }
 
 .background-1 {
-    background-image: url("/img/general/carousel-one.jpg");
+    background-image: url("../img/general/carousel-one.jpg");
 }
 
 .background-2 {
-    background-image: url("/img/general/carousel-two.jpg");
+    background-image: url("../img/general/carousel-two.jpg");
     background-position: 100% 30%;
 }
 
@@ -446,19 +446,26 @@ footer .copyright-notice {
 }
 
 /* === Server Status Page Styling === */
+.pve-intro,
+.pvp-intro,
 .server-intro {
     margin-top: 100px;
     color: #fff;
     margin-bottom: 25px;
 }
 
+.pve-intro h1,
+.pvp-intro h1,
 .server-intro h1 {
     font-size: 2.6em;
     margin-bottom: 15px;
 }
 
+.pve-intro p,
+.pvp-intro p,
 .server-intro p {
     color: #ebdec2;
+    margin-bottom: 5px;
 }
 
 .server-table-container {
@@ -484,20 +491,20 @@ footer .copyright-notice {
 
 .server-row.heading > .data {
     font-weight: 700;
-    cursor: pointer;
     text-transform: none;
 }
 
+.server-row > .data:last-child,
 .server-row.heading > .data:last-child {
     text-align: right;
 }
 
-.server-row > .data:last-child {
-    text-align: right;
+.server-row:not(:first-of-type):nth-of-type(even) {
+    background-color: rgba(123, 92, 67, 0.15);
 }
 
-.server-row:not(:first-child):nth-of-type(even) {
-    background-color: rgba(123, 92, 67, 0.15);
+.server-list .server-row:not(:first-of-type):hover {
+    background-color: rgba(123, 92, 67, 0.45);
 }
 
 .server-row > .data {
@@ -558,6 +565,7 @@ https://loading.io/css/
 }
 
 /* === Loading Animation === */
+.pvp-loading,
 .server-loading {
     position: absolute;
     top: 25px;
@@ -572,10 +580,12 @@ https://loading.io/css/
     pointer-events: none;
 }
 
+.pvp-loading.show,
 .server-loading.show {
     opacity: 1;
 }
 
+.pvp-loading > p,
 .server-loading > p {
     position: relative;
     top: 10px;
@@ -645,3 +655,58 @@ https://loading.io/css/
     }
 }
 
+/* === PvP Page Bracket Selection === */
+
+.pvp-bracket-selection-container {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+}
+
+.pvp-bracket-selection-container > label {
+    font-size: 16px;
+    color: #fff;
+    font-weight: 700;
+    margin-right: 10px;
+}
+
+#pvp-bracket-selection {
+    width: 100%;
+    max-width: 125px;
+    text-align: right;
+}
+
+.pvp-unavailable {
+    display: block;
+    width: 500px;
+    margin: 50px auto 0;
+    padding: 25px;
+    background-color: #ff4143;
+    color: #fff;
+}
+
+.pvp-intro ul {
+    padding-left: 30px;
+    margin: 15px 0;
+}
+
+/* === PvE Page === */
+
+.pve-intro > .scrollbox {
+    height: 150px;
+    overflow-y: scroll;
+}
+
+.pve-intro ul {
+    padding-left: 30px;
+    margin: 15px 0;
+}
+
+.pve-list > .construction {
+    display: block;
+    padding: 25px;
+    background-color: #f15a24;
+    color: #fff;
+    margin: 50px auto 0;
+    width: 500px;
+}

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit-cover"/>
-    <title>Server Status</title>
+    <title>PvE Status</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="../css/styles.css" rel="stylesheet"/>
 </head>
@@ -20,46 +20,37 @@
     <div class="nav-container">
         <ul>
             <li>
-                <a href="../pve">PvE</a>
+                <a href="#!">PvE</a>
             </li>
             <li>
                 <a href="../pvp">PvP</a>
             </li>
             <li>
-                <a href="#!">Servers</a>
+                <a href="../servers">Servers</a>
             </li>
         </ul>
     </div>
 </nav>
-    <section class="server-page container-lg">
-        <section class="server-intro">
-            <h1>Server Status</h1>
-            <p>The section below is the current status of all existing World of Warcraft servers. The call is made when the page is loaded. You can refresh the content by reloading the page in the event a server outage occurs.</p>
-            <p>Note: as of recent changes to mega-server structuring, all Normal and PvP servers were consolidated as PvE servers. The only available types of servers are PvE or RP (Role-playing).</p>
-        </section>
-        <section class="server-table-container">
-            <div class="server-loading show">
-                <p>Loading Servers</p>
-                <div class="lds-ellipsis">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                </div>
+    <section class="pve-page container-lg">
+        <section class="pve-intro">
+            <h1>PvE Leaderboards</h1>
+            <div class="scrollbox">
+                <p>Player vs. Environment, commonly referred to as PvE by most online games and gamers, is the player-controlled character (you) competing against the game world and its computer-controlled denizens, as opposed to Player vs Player. To the PvE focused player the primary challenge comes from tough mobs like instance bosses rather than other player characters.</p>
+                <p>Additional Notes:</p>
+                <ul>
+                    <li>Player vs. Environment is the dominant form of MMORPG games.</li>
+                    <li>Blizzard refers to PvE servers as "Normal" servers.</li>
+                    <li>Also incorrectly known as "Player vs. Everything/Everyone/Elemental".</li>
+                    <li>In some online games, PvE is known as Player versus Monster (PvM for short).</li>
+                </ul>
+                <p>PvE also refers to the PvE type of realms which are realms where "consensual combat" generally prevails. This means most players will only engage in PvP combat if they choose or do some action that enables their PvP flag.</p>
             </div>
-                <div class="server-list">
-                    <div class="server-row heading">
-                        <div class="data server-type">Type</div>
-                        <div class="data server-name">Name</div>
-                        <div class="data server-bg">Battlegroup</div>
-                        <div class="data server-pop">Population</div>
-                        <div class="data server-status">Status</div>
-                    </div>
-                </div>
+        </section>
+        <section class="pve-list">
+            <div class="construction">
+                <p>This page is currently still under construction. Please check back in a few weeks for any updates.</p>
+            </div>
         </section>
     </section>
-    <!-- Scripts -->
-    <script src="../js/jquery-3.3.1.min.js"></script>
-    <script src="../js/servers.js"></script>
 </body>
 </html>

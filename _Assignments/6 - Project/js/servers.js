@@ -38,18 +38,12 @@ function realmStatus() {
 
 function buildRow(type, name, bg, pop, status) {
 
-    let newPop = pop.toUpperCase();
+    let newPop = pop.toLowerCase();
 
-    if (newPop === 'N/A') {
+    if (newPop === 'n/a') {
         newPop = 'Unknown';
-    } else if (newPop === 'FULL') {
-        newPop = 'Full';
-    } else if (newPop === 'HIGH') {
-        newPop = 'High';
-    } else if  (newPop === 'MEDIUM') {
-        newPop = 'Medium';
     } else {
-        newPop = 'Low';
+        newPop = newPop.charAt(0).toUpperCase() + newPop.substring(1);
     }
 
     return `
