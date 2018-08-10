@@ -1,0 +1,18 @@
+{
+  "name": "database",
+  "version": "0.0.1",
+  "description:": "database interaction",
+  "main": "dbcon.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node dbcon.js"
+  },
+  "author": "Christopher Matian",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "express-handlebars": "^3.0.0",
+    "mysql": "^2.16.0"
+  }
+}
