@@ -63,9 +63,9 @@ app.get('/tasks', function(req, res) {
 });
 
 app.put('/tasks', function(req, res) {
-    let units = req.query.units === 'kg' ? 0 : 1;
+    console.log("Updating existing workout...");
     pool.query('UPDATE todo SET name=?, rep=?, weight=?, date=?, units=? WHERE id=? ',
-        [req.query.name, req.query.rep, req.query.weight, req.query.date, units, req.query.id], function(error) {
+        [req.query.name, req.query.rep, req.query.weight, req.query.date, req.query.units, req.query.id], function(error) {
         if (error) {
             console.log(error);
             return;
@@ -75,12 +75,14 @@ app.put('/tasks', function(req, res) {
 });
 
 app.post('/tasks', function(req, res) {
+    console.log("Creating new workout...");
     let body = req.body;
+    console.log(body);
     let name = body.name === '' ? null : body.name;
     let reps = body.rep;
     let weight = body.weight;
     let date = body.date;
-    let units = body.units === 'kg' ? 0 : 1;
+    let units = body.units;
     let values = "'" + name + "'," + reps + ',' + weight + ",'" + date + "'," + units;
     pool.query('INSERT INTO todo(name, rep, weight, date, units) VALUES (' + values + ');', function(error, rows) {
         if (error) {
@@ -97,6 +99,7 @@ app.post('/', function(req, res){
 });
 
 app.delete('/tasks', function(req, res) {
+    console.log('Deleting existing workout...');
     let id = req.query.id;
     let context = {};
     pool.query('DELETE FROM todo WHERE id = ' + id, function(error, rows) {

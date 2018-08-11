@@ -37,20 +37,19 @@ function editForm(event, id) {
     $editContainer.html('');
     // Edit Form HTML
     let form = '<h3>Edit Form</h3><form class="edit-form">' + $mainForm.html() + '</form>';
-    // Edit Form Selector
-    let $eform = $('.edit-form');
     $editContainer.append(form);
     $editContainer.find('.add-task').toggleClass('add-task edit-task');
     $.ajax({
         url: '/tasks?id=' + id,
         success: function(data) {
+            // Edit Form Selector
+            let $eform = $('.edit-form');
             let obj = JSON.parse(data.results);
-            let units = obj[0].units === 1 ? 'lbs' : 'kg';
             $eform.find('.name').val(obj[0].name);
             $eform.find('.rep').val(obj[0].rep);
             $eform.find('.weight').val(obj[0].weight);
             $eform.find('.date').val(obj[0].date);
-            $eform.find('.units').val(units);
+            $eform.find('.units').val(obj[0].units);
             $eform.on('click', '.edit-task', function(event) {
                 event.preventDefault();
                 let str = '';
@@ -91,6 +90,7 @@ function addEventListener() {
 
 function render(data) {
     let json = JSON.parse(data.results);
+
     $workoutContainer.html('');
 
     if (json.length > 0) {
@@ -114,23 +114,39 @@ function render(data) {
         for (let i = 0; i < json.length; i++) {
             tr = document.createElement('tr');
             for (let k in json[i]) {
-                if (k !== 'id') {
+                if (k !== 'id' && k !== 'units') {
                     let td = document.createElement('td');
                     let label = json[i][k];
                     td.appendChild(document.createTextNode(label));
                     tr.appendChild(td);
-                } else {
+                }
+                else if (k === 'units') {
+                    let unit = json[i][k];
+                    let td = document.createElement('td');
+                    if (unit === 0 || unit === 'kg') {
+                        td.appendChild(document.createTextNode('kg'));
+                        tr.appendChild(td);
+                    } else {
+                        td.appendChild(document.createTextNode('lbs'));
+                        tr.appendChild(td);
+                    }
+                }
+                else {
                     tr.setAttribute('data-id', json[i][k]);
                 }
             }
+            // Create Edit Button
             let edit = document.createElement('button');
             edit.className = 'btn btn-edit edit';
             edit.appendChild(document.createTextNode('edit'));
+            // Create Delete Button
             let del = document.createElement('button');
             del.className = 'btn btn-delete delete';
             del.appendChild(document.createTextNode('delete'));
+            // Append Edit Button
             tr.appendChild(edit);
             tableBody.appendChild(tr);
+            // Append Delete Button
             tr.appendChild(del);
             tableBody.appendChild(tr);
         }
