@@ -96,14 +96,11 @@ function render(data) {
     if (json.length > 0) {
         let table = document.createElement('table');
         let tableBody = document.createElement('tbody');
-
-        table.style.width = '100%';
-        table.setAttribute('border', '1');
         let tr = document.createElement('tr');
         for (let key in json[0]) {
             if (key !== 'id') {
                 let th = document.createElement('th');
-                th.appendChild(document.createTextNode(key));
+                th.appendChild(document.createTextNode(key.toUpperCase()));
                 tr.appendChild(th);
             }
         }

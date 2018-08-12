@@ -1,0 +1,130 @@
+body, html {
+    font-family: Arial, sans-serif;
+}
+
+.main-title {
+    color: #35a0ff;
+    margin-bottom: 5px;
+}
+
+p {
+    margin: 5px 0;
+}
+
+.edit-form-container h3 {
+    margin-bottom: 5px;
+}
+
+form.edit-form,
+form#workout-submission {
+    background-color: #e1e1e1;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: stretch;
+    margin-bottom: 15px;
+}
+
+form .form-group {
+    display: flex;
+    flex-flow: column nowrap;
+    margin: 10px 15px;
+}
+
+.form-group label {
+    color: #000;
+    font-size: 12px;
+    font-style: italic;
+}
+
+.form-group select,
+.form-group input {
+    font-size: 16px;
+    padding: 5px;
+}
+
+.form-group:last-child {
+    margin-left: auto;
+}
+
+.btn {
+    display: inline-block;
+    height: 100%;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    -webkit-appearance: none;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    outline: 0;
+}
+
+.btn-blue {
+    color: #fff;
+    background-color: #3198ea;
+}
+
+.btn-blue:hover {
+    background-color: #59bbff;
+}
+
+.workout-table-container  table {
+    width: 100%;
+    text-align: left;
+    border: 0;
+}
+
+.btn-edit {
+    color: #fff;
+    background-color: #ffd232;
+}
+
+.btn-edit:hover {
+    background-color: #ffe681;
+}
+
+.btn-delete {
+    position: relative;
+    color: #fff;
+    background-color: #ff4143;
+}
+
+.btn-delete:hover {
+    background-color: #ff6161;
+}
+
+.workout-table-container table th,
+.workout-table-container table td {
+    padding: 5px;
+}
+
+.workout-table-container table tr {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+}
+
+.workout-table-container table tr:not(:first-of-type) {
+    height: 50px;
+}
+
+.workout-table-container table tr .btn {
+    height: auto;
+}
+
+.workout-table-container table tr .btn:first-of-type {
+    margin-left: auto;
+}
+
+.workout-table-container table tr .btn:last-of-type {
+    margin: 0 10px;
+}
+
+.workout-table-container table tr td,
+.workout-table-container table tr th {
+    width: calc((100% / 7) - 10px);
+}
+
+.workout-table-container table tr:not(:first-child):nth-of-type(odd) {
+    background-color: #e6e6e6;
+}

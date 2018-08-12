@@ -9,8 +9,8 @@ let pool = mysql.createPool({
 });
 
 // Generate Initial Table within the 'workouts' database
-pool.query("DROP TABLE IF EXISTS todo", function() {
-    let createString = "CREATE TABLE todo(" +
+pool.query("DROP TABLE IF EXISTS workouts", function() {
+    let createString = "CREATE TABLE workouts(" +
         "id INT PRIMARY KEY AUTO_INCREMENT," +
         "name VARCHAR(255) NOT NULL," +
         "rep INT," +
@@ -21,7 +21,7 @@ pool.query("DROP TABLE IF EXISTS todo", function() {
         if (error) {
             console.log(error);
         }
-        console.log("Todo Table Created");
+        console.log("Workouts Table Created");
     });
 });
 
@@ -36,13 +36,13 @@ app.use(bodyParser.json());
 app.use(express.static('public'));
 
 app.get('/', function(req, res){
-    res.render('form');
+    res.render('home');
 });
 
 app.get('/tasks', function(req, res) {
     let context = {};
     if (!req.query.id) {
-        pool.query('SELECT * FROM todo', function(error, rows) {
+        pool.query('SELECT * FROM workouts', function(error, rows) {
             if (error) {
                 console.log(error);
                 return;
@@ -51,7 +51,7 @@ app.get('/tasks', function(req, res) {
             res.send(context);
         });
     } else {
-        pool.query('SELECT * FROM todo WHERE id = ' + req.query.id, function(error, rows) {
+        pool.query('SELECT * FROM workouts WHERE id = ' + req.query.id, function(error, rows) {
             if (error) {
                 console.log(error);
                 return;
@@ -64,13 +64,13 @@ app.get('/tasks', function(req, res) {
 
 app.put('/tasks', function(req, res) {
     console.log("Updating existing workout...");
-    pool.query('UPDATE todo SET name=?, rep=?, weight=?, date=?, units=? WHERE id=? ',
+    pool.query('UPDATE workouts SET name=?, rep=?, weight=?, date=?, units=? WHERE id=? ',
         [req.query.name, req.query.rep, req.query.weight, req.query.date, req.query.units, req.query.id], function(error) {
         if (error) {
             console.log(error);
             return;
         }
-        res.render('form');
+        res.render('home');
     });
 });
 
@@ -84,7 +84,7 @@ app.post('/tasks', function(req, res) {
     let date = body.date;
     let units = body.units;
     let values = "'" + name + "'," + reps + ',' + weight + ",'" + date + "'," + units;
-    pool.query('INSERT INTO todo(name, rep, weight, date, units) VALUES (' + values + ');', function(error, rows) {
+    pool.query('INSERT INTO workouts(name, rep, weight, date, units) VALUES (' + values + ');', function(error, rows) {
         if (error) {
             console.log(error);
             return;
@@ -95,14 +95,14 @@ app.post('/tasks', function(req, res) {
 });
 
 app.post('/', function(req, res){
-    res.render('form');
+    res.render('home');
 });
 
 app.delete('/tasks', function(req, res) {
     console.log('Deleting existing workout...');
     let id = req.query.id;
     let context = {};
-    pool.query('DELETE FROM todo WHERE id = ' + id, function(error, rows) {
+    pool.query('DELETE FROM workouts WHERE id = ' + id, function(error, rows) {
         if (error) {
             next(error);
             return;
