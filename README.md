@@ -5,4 +5,4 @@ CS290 Web Development Course - Summer 2018
 
 Author: Christopher Matian
 
-Grade: A-
+Grade: A+
